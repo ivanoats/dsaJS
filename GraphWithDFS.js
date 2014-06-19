@@ -52,14 +52,16 @@ Graph.prototype.bfs = function(s) {
   queue.push(s); // add to back of queue
   while (queue.length > 0) {
     var v = queue.shift(); // remove from front of queue
-    if (v === undefined) {
+    if (v) {
       console.log('Visited vertex' + v);
     }
-    if (this.adjacencies[v] ) {
+    if (this.adjacencies[v]  ) {
       this.adjacencies[v].forEach(function(w) {
-        this.edgeTo[w] = v;
-        this.marked[w] = true;
-        queue.push(w);
+        if (!this.marked[w]) {
+          this.edgeTo[w] = v;
+          this.marked[w] = true;
+          queue.push(w);
+        }
       }, this);
     }
   }
