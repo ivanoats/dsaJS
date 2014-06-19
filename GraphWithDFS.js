@@ -9,6 +9,7 @@ var Graph = function(v) {
   this.edges       = 0;
   this.adjacencies = [];
   this.marked      = [];
+  this.edgeTo      = [];
   var i;
   for (i = 0; i < this.vertices; ++i ) {
     this.adjacencies[i] = [];
@@ -36,17 +37,39 @@ Graph.prototype.showGraph = function() {
 };
 
 Graph.prototype.dfs = function(v) {
-  var that = this;
   this.marked[v] = true;
   if (this.adjacencies[v] !== undefined ) {
     console.log('Visited vertex: ' + v);
   }
   this.adjacencies[v].forEach(function(w) {
-    console.log('in forEach, w is:');
-    console.dir(w);
-    if (!that.marked[w]) { that.dfs(w); }
-  });
+    if (!this.marked[w] && w ) { this.dfs(w); }
+  }, this);
+};
+
+Graph.prototype.bfs = function(s) {
+  var queue = [];
+  this.marked[s] = true;
+  queue.push(s); // add to back of queue
+  while (queue.length > 0) {
+    var v = queue.shift(); // remove from front of queue
+    if (v === undefined) {
+      console.log('Visited vertex' + v);
+    }
+    if (this.adjacencies[v] ) {
+      this.adjacencies[v].forEach(function(w) {
+        this.edgeTo[w] = v;
+        this.marked[w] = true;
+        queue.push(w);
+      }, this);
+    }
+  }
 };
 
 module.exports.Vertex = Vertex;
 module.exports.Graph  = Graph;
+
+
+
+
+
+
