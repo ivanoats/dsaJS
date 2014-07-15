@@ -1,0 +1,23 @@
+{
+  "name": "dsa-js",
+  "version": "0.0.0",
+  "description": "Data Structures and Algorithms in JavaScript",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "keywords": [
+    "data-structures",
+    "javascript",
+    "algorithms"
+  ],
+  "author": "Ivan Storck",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.20.1"
+  }
+}

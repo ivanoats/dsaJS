@@ -1,6 +1,6 @@
 'use strict';
 
-var Graph = require('./GraphWithDFS.js').Graph;
+var Graph = require('../lib/GraphWithDFS.js').Graph;
 
 var g = new Graph(10);
 g.addEdge(0, 1);
