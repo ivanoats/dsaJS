@@ -16,10 +16,16 @@ Node Packages:
 
 ## Build
 
-`browserify public/app.js -t debowerify -o public/bundle.js`
+`browserify public/app.js -t debowerify -o public/bundle.js -d`
 
 ### Auto-Build
-`watchify public/app.js -t debowerify -o public/bundle.js -v`
+`watchify public/app.js -t debowerify -o public/bundle.js -v -d`
+
+Command line options explanation:
+`-t` debowerify: include bower packages
+`-o` output to file
+`-v` verbose (shows rebundling after writing new file in STDOUT)
+`-d` debug, include source maps
 
 ## Run
 
@@ -33,5 +39,9 @@ Visit [http://localhost:3000](http://localhost:3000) in your browser.
 Send [Ivan Storck](https://github.com/ivanoats) a (clean) Pull Request on GitHub
 
 # License
-Copyright 2014 Code Fellows LLC 
-[MIT](http://opensource.org/licenses/MIT)
+
+Use as you wish. Please link here if you can. 
+
+[MIT](http://opensource.org/licenses/MIT) license.
+
+Copyright © 2014 Code Fellows LLC.

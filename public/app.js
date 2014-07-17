@@ -3,23 +3,24 @@
 window.d3 = require('d3');
 var WeightedQuickUnion = require('../lib/WeightedQuickUnion');
 
-var width  = 1024,
-    height = 512,
+var graphDiv = document.getElementById("graph");
+var width  = graphDiv.clientWidth - 50,
+    height = innerHeight / 2, // page height
     svg    = d3.select('#graph')
                .append('svg')
                .attr({width: width, height: height});
 
 var wqu = new WeightedQuickUnion(25);
-console.dir(wqu);
 
 // Visualize WQU with https://github.com/mbostock/d3/wiki/Tree-Layout
 // connect a site, revisualize
-var nodes = [];
-nodes = wqu.id;
 var edges = [];
+var wquNodes = wqu.id.map(function(element){
+  return {value: element};
+});
 
-var dataset = {
-  nodes: nodes,
+window.dataset = {
+  nodes: wquNodes,
   edges: edges
 };
 
@@ -30,7 +31,8 @@ var force = d3.layout.force()
                      .nodes(dataset.nodes)
                      .links(dataset.edges)
                      .linkDistance([50])
-                     .charge([-100])
+                     .charge([-75])
+                     .gravity(0.1)
                      .size([width,height])
                      .start();
 
@@ -49,11 +51,8 @@ var nodes = svg.selectAll('circle')
   .style('fill', function(d, i) {
     return colors(i);
   })
-  .on('click', function(d){
-    alert("The Value is " + d);
-  })
   .call(force.drag);
-/*
+
 var labels = svg.selectAll('text')
                 .data(dataset.nodes)
                 .enter()
@@ -63,8 +62,8 @@ var labels = svg.selectAll('text')
                 .attr('font-size', '11px')
                 .attr('font-weight', 'bold')
                 .attr('fill', 'black')
-                .text(function(d) { return d;} );
-*/
+                .text(function(d) { return d.value;} );
+
 force.on('tick', function() {
   edges.attr('x1', function(d) { return d.source.x; })
        .attr('y1', function(d) { return d.source.y; })
@@ -74,6 +73,6 @@ force.on('tick', function() {
   nodes.attr('cx', function(d) { return d.x; })
        .attr('cy', function(d) { return d.y; });
 
-//  labels.attr('transform', function(d) { return 'translate(' +  (d.x + 10) +  ',' + d.y + ')'; } );
+  labels.attr('transform', function(d) { return 'translate(' +  (d.x + 10) +  ',' + d.y + ')'; } );
 
 });
