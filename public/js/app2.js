@@ -1,27 +1,43 @@
 'use strict';
 
 window.d3 = require('d3');
-var WeightedQuickUnion = require('../lib/WeightedQuickUnion');
 
 var graphDiv = document.getElementById("graph");
 var width  = graphDiv.clientWidth - 50,
-    height = innerHeight / 2, // page height
-    svg    = d3.select('#graph')
+    height = innerHeight / 2 // page height
+window.svg    = d3.select('#graph')
                .append('svg')
                .attr({width: width, height: height});
 
-var wqu = new WeightedQuickUnion(25);
+var wordNodes = ["inclusive",
+  "approachable",
+  "trust",
+  "humility",
+  "practical",
+  "dynamic",
+  "community",
+  "supportive",
+  "upbeat",
+  "positive",
+  "reflective",
+  "geek culture",
+  "always learning",
+  "agile"
+];
 
-// Visualize WQU with https://github.com/mbostock/d3/wiki/Tree-Layout
-// connect a site, revisualize
-var edges = [];
-var wquNodes = wqu.id.map(function(element){
-  return {value: element};
+var wordEdges = [];
+
+wordNodes.forEach(function(n){
+  wordNodes.forEach(function(n2){
+    wordEdges.push({source: indexOf(n), target: indexOf(n2)});
+  });
 });
 
+console.dir(wordEdges);
+
 window.dataset = {
-  nodes: wquNodes,
-  edges: edges
+  nodes: wordNodes,
+  edges: wordEdges
 };
 
 // force layout?
