@@ -5,3 +5,4 @@ tmp/
 .DS_Store
 public/bundle.js
 .idea/
+public
