@@ -1,2 +1,7 @@
 node_modules
+app/components/
 .project
+tmp/
+.DS_Store
+public/bundle.js
+.idea/

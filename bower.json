@@ -26,6 +26,8 @@
     "tests"
   ],
   "dependencies": {
-    "d3": "~3.4.10"
+    "d3": "~3.4.10",
+    "angular": "latest",
+    "angular-route": "~1.2.23"
   }
 }
