@@ -10,7 +10,7 @@ require('./controllers/pagesController')(dsaApp);
 dsaApp.config(['$routeProvider', function($routeProvider){
   $routeProvider
     .when('/index', {
-      templateUrl : 'js/views/page.html',
+      templateUrl : 'views/intro.html',
       controller: 'PagesController'
     } )
     .otherwise({
