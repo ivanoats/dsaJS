@@ -3,11 +3,14 @@
 The aim of this project is to teach Data Structures and Algorithms by visualizing
 them on a web page with [D3.js](http://d3js.org/).
 
+This is currently a work in progress making an AngularJS based web site with a
+simple page model.
+
 ## Prerequisites
 
 [NodeJS](http://nodejs.org) installed.
 Node Packages:
-`npm -g install browserify node-static watchify`
+`npm -g install browserify node-static watchify grunt-cli`
 
 ## Install
 `git clone` (this repo's URL)
@@ -16,21 +19,11 @@ Node Packages:
 
 ## Build
 
-`browserify public/app.js -t debowerify -o public/bundle.js -d`
-
-### Auto-Build
-`watchify public/app.js -t debowerify -o public/bundle.js -v -d`
-
-Command line options explanation:
-`-t` debowerify: include bower packages
-`-o` output to file
-`-v` verbose (shows rebundling after writing new file in STDOUT)
-`-d` debug, include source maps
+`grunt build`
 
 ## Run
 
-`static public -p3000` - this assumes you have `npm -g install node-static` as 
-a simple web server available.
+`grunt serve` 
 
 Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
