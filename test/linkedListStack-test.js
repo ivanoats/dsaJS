@@ -26,5 +26,8 @@ describe('Linked List Stack', function() {
     lls.push('foo');
     expect(lls.pop()).to.be.equal('foo');
   });
+
+  it('can insert a new node after an item');
+  it('can remove a node');
 });
 
