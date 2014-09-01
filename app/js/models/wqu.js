@@ -1,7 +1,7 @@
 'use strict';
 
 window.d3 = require('d3');
-var WeightedQuickUnion = require('../../lib/WeightedQuickUnion');
+var WeightedQuickUnion = require('../../../lib/WeightedQuickUnion');
 
 var graphDiv = document.getElementById("graph");
 var width  = graphDiv.clientWidth - 50,
