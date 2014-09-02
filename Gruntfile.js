@@ -94,7 +94,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('serve', [ 'build', 'express:dev','watch' ]);
   grunt.registerTask('server', 'serve');
-  grunt.reuisterTask('test','simplemocha');
+  grunt.registerTask('test','simplemocha');
   grunt.registerTask('default', ['jshint','build', 'test', 'jsdoc']);
   grunt.registerTask('build',['clean', 'browserify', 'copy']);
 };
