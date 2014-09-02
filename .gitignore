@@ -6,3 +6,4 @@ tmp/
 public/bundle.js
 .idea/
 public
+automocha
