@@ -39,9 +39,16 @@ describe('Linked List Stack', function() {
     expect(lls.find('c').item).to.equal('c');
   });
 
+  it('can display the linked list', function() {
+    var lls = new LinkedListStack();
+    lls.push('a'); lls.push('b'); lls.push('c');
+    expect(lls.display()).to.equal('c\nb\n\a\n');
+  });
+
   // pending specs
   it('errors when finding on an empty list');
   it('can insert a new node after an item');
   it('can remove a node');
+
 });
 
