@@ -42,12 +42,21 @@ describe('Linked List Stack', function() {
   it('can display the linked list', function() {
     var lls = new LinkedListStack();
     lls.push('a'); lls.push('b'); lls.push('c');
-    expect(lls.display()).to.equal('c\nb\n\a\n');
+    expect(lls.display()).to.equal('c\nb\na\n');
   });
 
-  // pending specs
-  it('errors when finding on an empty list');
-  it('can insert a new node after an item');
+  it('errors when finding on an empty list', function() {
+    var lls = new LinkedListStack();
+    expect(function(){lls.find('item');}).to.throw(/is empty/);
+  });
+
+  it('can insert a new node after an item', function() {
+    var lls = new LinkedListStack();
+    lls.push('a'); lls.push('b'); lls.push('c');
+    lls.insert('b and a half','c');
+    expect(lls.display()).to.equal('c\nb and a half\nb\na\n');
+  });
+
   it('can remove a node');
 
 });
