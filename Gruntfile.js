@@ -7,6 +7,14 @@ module.exports = function(grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
+    jsdoc : {
+      dist : {
+        src: ['lib/*.js', 'test/*.js'],
+        options: {
+          destination: 'doc'
+        }
+      }
+    },
     jshint: {
       options: {
         jshintrc: true
@@ -86,9 +94,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('serve', [ 'build', 'express:dev','watch' ]);
   grunt.registerTask('server', 'serve');
-  grunt.registerTask('test:acceptance',['express:dev','casper']);
-  grunt.registerTask('test:api','simplemocha');
-  grunt.registerTask('test',['test:acceptance','test:api']);
-  grunt.registerTask('default', ['jshint', 'test']);
+  grunt.reuisterTask('test','simplemocha');
+  grunt.registerTask('default', ['jshint','build', 'test', 'jsdoc']);
   grunt.registerTask('build',['clean', 'browserify', 'copy']);
 };

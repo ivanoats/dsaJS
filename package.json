@@ -27,6 +27,7 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-express-server": "^0.4.19",
+    "grunt-jsdoc": "^0.5.7",
     "grunt-shell": "^1.0.1",
     "matchdep": "^0.3.0",
     "mocha": "^1.20.1"
