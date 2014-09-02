@@ -27,6 +27,20 @@ describe('Linked List Stack', function() {
     expect(lls.pop()).to.be.equal('foo');
   });
 
+  it('errors when popping an empty list',function() {
+    var lls = new LinkedListStack();
+    expect(function(){lls.pop();}).to.throw(/is empty/);
+  });
+
+  it('can find a node',function() {
+    var lls = new LinkedListStack();
+    lls.push('a'); lls.push('b'); lls.push('c');
+    expect(lls.find('c')).to.have.property('item');
+    expect(lls.find('c').item).to.equal('c');
+  });
+
+  // pending specs
+  it('errors when finding on an empty list');
   it('can insert a new node after an item');
   it('can remove a node');
 });
