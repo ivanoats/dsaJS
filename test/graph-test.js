@@ -1,7 +1,8 @@
 'use strict';
 
+var rootPath = require('app-root-path');
 var expect = require('chai').expect;
-var Graph = require('../lib/graph').Graph;
+var Graph = require(rootPath + '/lib/graph').Graph;
 
 describe('Graph', function() {
   it('can make a new graph with a specific number of vertices', function() {

@@ -17,6 +17,7 @@
   "author": "Ivan Storck",
   "license": "MIT",
   "devDependencies": {
+    "app-root-path": "^0.1.0",
     "browserify": "^4.2.1",
     "chai": "^1.9.1",
     "debowerify": "^0.8.1",
