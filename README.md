@@ -10,12 +10,15 @@ simple page model.
 
 [NodeJS](http://nodejs.org) installed.
 Node Packages:
-`npm -g install browserify node-static watchify grunt-cli`
+
+`npm -g install bower browserify grunt-cli node-static watchify`
 
 ## Install
-`git clone` (this repo's URL)
-`cd dsaJS`
-`npm install && bower install`
+```bash
+  git clone [this repo's URL]
+  cd dsaJS
+  npm install && bower install
+```
 
 ## Build
 
@@ -23,7 +26,7 @@ Node Packages:
 
 ## Run
 
-`grunt serve` 
+`grunt serve`
 
 Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
@@ -33,7 +36,7 @@ Send [Ivan Storck](https://github.com/ivanoats) a (clean) Pull Request on GitHub
 
 # License
 
-Use as you wish. Please link here if you can. 
+Use as you wish. Please link here if you can.
 
 [MIT](http://opensource.org/licenses/MIT) license.
 
