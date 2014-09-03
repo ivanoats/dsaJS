@@ -1,3 +1,5 @@
+/*jshint multistr: true */
+/*jshint expr: true*/
 'use strict';
 
 var expect = require('chai').expect;
@@ -48,17 +50,25 @@ describe('Linked List Stack', function() {
     expect(function(){lls.find('item');}).to.throw(/is empty/);
   });
 
+  it('tries to find a node that isn\'t there and gets undefined',function() {
+    lls.push('a'); lls.push('b'); lls.push('c');
+    expect(lls.find('d')).to.be.undefined;
+  });
+
   it('can insert a new node after an item', function() {
     lls.push('a'); lls.push('b'); lls.push('c');
     lls.insert('b and a half','c');
     expect(lls.display()).to.equal('c\nb and a half\nb\na\n');
   });
 
-  it('can remove a node');
-  it('tries to find a node that isn\'t there and throws an error',function() {
-    lls.push('a'); lls.push('b'); lls.push('c');
-    expect(function(){lls.find('d');}).to.throw(/is not there/);
+  it('throws an error if you try to insert a new node after an item \
+that isn\'t there', function() {
+    lls.push('a'); lls.push('b');
+    expect(function(){ lls.insert('d','c'); }).to.throw(/cannot find that item/);
   });
+
+  //pending
+  it('can remove a node');
 
 });
 
