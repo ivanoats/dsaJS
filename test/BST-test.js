@@ -29,4 +29,22 @@ describe('BST', function() {
     bst.insert(8);
     expect(bst.inOrder(bst.root)).to.equal('1 3 5 7 8 ');
   });
+  
+  it('can perform a pre-order traversal', function() {
+    bst.insert(5);
+    bst.insert(3);
+    bst.insert(7);
+    bst.insert(1);
+    bst.insert(8);
+    expect(bst.preOrder(bst.root)).to.equal('5 3 1 7 8 ');
+  });
+  
+  it('can perform a post-order traversal', function() {
+    bst.insert(5);
+    bst.insert(3);
+    bst.insert(7);
+    bst.insert(1);
+    bst.insert(8);
+    expect(bst.postOrder(bst.root)).to.equal('3 1 7 8 5 ');
+  });
 });
