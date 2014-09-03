@@ -55,6 +55,10 @@ describe('Linked List Stack', function() {
   });
 
   it('can remove a node');
+  it('tries to find a node that isn\'t there and throws an error',function() {
+    lls.push('a'); lls.push('b'); lls.push('c');
+    expect(function(){lls.find('d');}).to.throw(/is not there/);
+  });
 
 });
 
