@@ -1,3 +1,4 @@
+/*jshint expr: true*/
 'use strict';
 
 var rootPath = require('app-root-path');
