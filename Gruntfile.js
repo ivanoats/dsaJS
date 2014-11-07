@@ -43,6 +43,10 @@ module.exports = function(grunt) {
       }
     },
 
+    simplemocha: {
+      all: { src: ['test/**/*.js'] }
+    },
+
     express: {
       dev: {
         options: {

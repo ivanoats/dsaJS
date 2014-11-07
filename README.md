@@ -14,8 +14,8 @@ Node Packages:
 `npm -g install bower browserify grunt-cli node-static watchify`
 
 ## Install
-```bash
-  git clone [this repo's URL]
+```
+  git clone ... 
   cd dsaJS
   npm install && bower install
 ```
@@ -23,6 +23,10 @@ Node Packages:
 ## Build
 
 `grunt build`
+
+## Test
+
+`npm test`
 
 ## Run
 
