@@ -70,5 +70,20 @@ that isn\'t there', function() {
   //pending
   it('can remove a node');
 
+  it('can test for a palindrome', function() {
+    lls.push('m'); lls.push('o'); lls.push('o'); lls.push('m');
+    expect(lls.isPalindrome()).to.be.true;
+  });
+
+  it('fails a test for a palindrome when it is not one', function() {
+    lls.push('m'); lls.push('a'); lls.push('a'); lls.push('a');
+    expect(lls.isPalindrome()).to.be.false;
+  });
+
+  it('handles an odd number length palindrome', function() {
+    lls.push('m'); lls.push('o'); lls.push('m');
+    expect(lls.isPalindrome()).to.be.true;
+  });
+
 });
 
