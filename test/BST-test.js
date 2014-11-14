@@ -20,7 +20,7 @@ describe('BST', function() {
     bst.insert('5');
     expect(bst.root).to.have.property('data');
   });
-/*
+
   it('can remove a node', function() {
     bst.insert(5);
     bst.insert(3);
@@ -30,7 +30,7 @@ describe('BST', function() {
     bst.remove(7);
     expect(bst.inOrder(bst.root)).to.equal('1 3 5 8 ');
   });
-*/
+
   it('can perform an in-order traversal', function() {
     bst.insert(5);
     bst.insert(3);
